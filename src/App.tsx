@@ -1,36 +1,18 @@
+import { ArrowCircleUp, ArrowCircleDown, CurrencyCircleDollar } from '@phosphor-icons/react';
+import logo from './assets/logo.svg';
+import BalanceCard from './components/BalanceCard';
 function App() {
 	return (
 		<>
 			<header>
-				<img src="./assets/logo.svg" alt="logo dev.finance$" />
+				<img src={logo} alt="logo dev.finance$" />
 			</header>
 			<main className="container">
 				<section id="balance">
 					<h2 className="sr-only">Balance</h2>
-
-					<div className="card">
-						<h3>
-							<span>Incomes</span>
-							<img src="./assets/income.svg" alt="Imagem de entradas" />
-						</h3>
-						<p id="income-display">0,00 Mzn</p>
-					</div>
-
-					<div className="card">
-						<h3>
-							<span>Expenses</span>
-							<img src="./assets/expense.svg" alt="Imagem de saidas" />
-						</h3>
-						<p id="expense-display">0,00 Mzn</p>
-					</div>
-
-					<div className="card total">
-						<h3>
-							<span>Total</span>
-							<img src="./assets/total.svg" alt="Imagem de total" />
-						</h3>
-						<p id="total-display">0,00 Mzn</p>
-					</div>
+					<BalanceCard title="Incomes" amount={0} CardIcon={ArrowCircleUp} />
+					<BalanceCard title="Expenses" amount={0} CardIcon={ArrowCircleDown} />
+					<BalanceCard title="Total" amount={0} CardIcon={CurrencyCircleDollar} />
 				</section>
 
 				<section id="transaction">
