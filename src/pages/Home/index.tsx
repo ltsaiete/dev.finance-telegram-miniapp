@@ -1,7 +1,7 @@
 import { ArrowCircleUp, ArrowCircleDown, CurrencyCircleDollar } from '@phosphor-icons/react';
 import BalanceCard from '../../components/BalanceCard';
 import logo from '../../assets/logo.svg';
-import { Header } from './styles';
+import { BalanceContainer, Header } from './styles';
 
 export default function Home() {
 	return (
@@ -9,14 +9,17 @@ export default function Home() {
 			<Header>
 				<img src={logo} alt="logo dev.finance$" />
 			</Header>
-			<main className="container">
+			
+			<BalanceContainer>
 				<section id="balance">
 					<h2 className="sr-only">Balance</h2>
 					<BalanceCard title="Incomes" amount={0} CardIcon={ArrowCircleUp} />
 					<BalanceCard title="Expenses" amount={0} CardIcon={ArrowCircleDown} />
 					<BalanceCard title="Total" amount={0} CardIcon={CurrencyCircleDollar} />
 				</section>
+			</BalanceContainer>
 
+			<main className="container">
 				<section id="transaction">
 					<h2 className="sr-only">Transactions</h2>
 
