@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-	background: #2d4a22;
+	background: ${(props) => props.theme.colors.mainDark};
 	padding: 2rem 0 8rem;
 	text-align: center;
 `;
@@ -12,5 +12,5 @@ const BaseContainer = styled.div`
 `;
 
 export const BalanceContainer = styled(BaseContainer).attrs({ as: 'main' })`
-	margin-top: -4rem;
+	margin-top: -6rem;
 `;

@@ -9,13 +9,13 @@ export default function Home() {
 			<Header>
 				<img src={logo} alt="logo dev.finance$" />
 			</Header>
-			
+
 			<BalanceContainer>
 				<section id="balance">
 					<h2 className="sr-only">Balance</h2>
-					<BalanceCard title="Incomes" amount={0} CardIcon={ArrowCircleUp} />
-					<BalanceCard title="Expenses" amount={0} CardIcon={ArrowCircleDown} />
-					<BalanceCard title="Total" amount={0} CardIcon={CurrencyCircleDollar} />
+					<BalanceCard title="Incomes" amount={0} type="income" />
+					<BalanceCard title="Expenses" amount={0} type="expense" />
+					<BalanceCard title="Total" amount={0} type="total" />
 				</section>
 			</BalanceContainer>
 

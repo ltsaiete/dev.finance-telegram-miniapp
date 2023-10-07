@@ -1,17 +1,25 @@
 import { Icon } from '@phosphor-icons/react';
+import { ArrowCircleUp, ArrowCircleDown, CurrencyCircleDollar } from '@phosphor-icons/react';
+import { theme } from '../../styles/theme';
 import { Container } from './styles';
 interface BalanceCardProps {
 	title: string;
-	CardIcon: Icon;
 	amount: number;
+	type: 'income' | 'expense' | 'total';
 }
 
-export default function BalanceCard({ title, amount, CardIcon }: BalanceCardProps) {
+const CardIcon = {
+	income: <ArrowCircleUp size={32} color={theme.colors.green} />,
+	expense: <ArrowCircleDown size={32} color={theme.colors.red} />,
+	total: <CurrencyCircleDollar size={32} color={theme.colors.white} />
+};
+
+export default function BalanceCard({ title, amount, type }: BalanceCardProps) {
 	return (
-		<Container>
+		<Container total={type === 'total'}>
 			<h3>
 				<span>{title}</span>
-				<CardIcon size={32} color="#333" />
+				{CardIcon[type]}
 			</h3>
 			<p id="income-display">{amount} Mzn</p>
 		</Container>

@@ -12,14 +12,14 @@ html {
 }
 
 body {
-  background: #f0f2f5;
+  background: ${(props) => props.theme.colors.background};
   font-family: "Poppins", sans-serif;
-  /* color: var(--color-text-base); */
+  color: ${(props) => props.theme.colors.textBase};
 }
 
 h2 {
   margin-bottom: 0.8rem;
-  /* color: var(--color-text-title); */
+  color: ${(props) => props.theme.colors.textTitle};
   font-weight: 400;
 }
 
