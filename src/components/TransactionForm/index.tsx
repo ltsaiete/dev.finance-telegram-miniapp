@@ -1,12 +1,21 @@
+import { useState } from 'react';
 import { InputGroup, ActionsGroup, DangerButton, Button } from './styles';
-export default function TransactionForm() {
+
+interface TransactionFormProps {
+	onCloseModal(): void;
+}
+export default function TransactionForm({ onCloseModal }: TransactionFormProps) {
+	const [description, setDescription] = useState();
+	const [amount, setAmoun] = useState();
+	const [date, setDate] = useState();
+	
 	return (
 		<form>
 			<InputGroup>
 				<label htmlFor="description" className="sr-only">
 					Descrição
 				</label>
-				<input type="text" id="description" name="description" placeholder="Descrição" />
+				<input type="text" id="description" name="description" placeholder="Description" />
 			</InputGroup>
 
 			<InputGroup>
@@ -14,7 +23,7 @@ export default function TransactionForm() {
 					Valor
 				</label>
 				<input type="number" id="amount" name="amount" step="0.01" placeholder="0,00" />
-				<small className="help">Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</small>
+				<small className="help">Use the - (minus) signal for expenses and , (comma) For decimal places</small>
 			</InputGroup>
 
 			<InputGroup>
@@ -25,7 +34,7 @@ export default function TransactionForm() {
 			</InputGroup>
 
 			<ActionsGroup>
-				<DangerButton type="button" className="cancel" onClick="Modal.close()">
+				<DangerButton type="button" onClick={onCloseModal}>
 					Cancel
 				</DangerButton>
 				<Button type="submit">Save</Button>

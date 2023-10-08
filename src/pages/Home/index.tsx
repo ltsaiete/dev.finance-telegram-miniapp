@@ -9,6 +9,10 @@ import TransactionForm from '../../components/TransactionForm';
 export default function Home() {
 	const [modalOpen, setModalOpen] = useState(false);
 
+	function onCloseModal() {
+		setModalOpen(false);
+	}
+
 	return (
 		<>
 			<Header>
@@ -35,7 +39,7 @@ export default function Home() {
 				<p>dev.finance$</p>
 			</Footer>
 			<Modal open={modalOpen} onOpenChange={setModalOpen} title="New Transaction">
-				<TransactionForm />
+				<TransactionForm onCloseModal={onCloseModal} />
 			</Modal>
 		</>
 	);
