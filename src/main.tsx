@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
@@ -7,7 +8,6 @@ WebApp.ready();
 WebApp.requestContact((res) => console.log('response', res));
 WebApp.onEvent('contactRequested', (cont) => console.log('contactRequested', cont));
 console.log('window');
-// @ts-nocheck
 console.log(window.Telegram.WebApp);
 
 // console.log(WebApp.WebAppUser);
