@@ -17,10 +17,10 @@ const themeColors: ThemeProps = WebApp.colorScheme === 'dark' ? darkTheme : ligh
 
 export const theme: DefaultTheme = {
 	colors: {
-		textBase: WebApp.themeParams.hint_color,
-		textTitle: WebApp.themeParams.text_color,
-		background: WebApp.themeParams.secondary_bg_color,
-		boxFill: WebApp.themeParams.bg_color,
+		textBase: WebApp.themeParams.hint_color || '#969cb3',
+		textTitle: WebApp.themeParams.text_color || '#363f5f',
+		background: WebApp.themeParams.secondary_bg_color || '#f0f2f5',
+		boxFill: WebApp.themeParams.bg_color || '#FFFFFF',
 		green: '#49AA26',
 		red: '#E92929',
 		white: '#FFF',
