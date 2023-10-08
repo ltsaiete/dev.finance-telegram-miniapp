@@ -4,11 +4,12 @@ import App from './App.tsx';
 import WebApp from '@twa-dev/sdk';
 
 WebApp.ready();
-console.log(WebApp);
 WebApp.requestContact((res) => console.log('response', res));
-WebApp.onEvent('contactRequested', (cont) => console.log(cont));
+WebApp.onEvent('contactRequested', (cont) => console.log('contactRequested', cont));
+console.log('window');
 // @ts-ignore
 console.log(window.Telegram.WebApp);
+
 // console.log(WebApp.WebAppUser);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
