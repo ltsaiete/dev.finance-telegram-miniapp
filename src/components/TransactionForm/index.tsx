@@ -5,10 +5,10 @@ interface TransactionFormProps {
 	onCloseModal(): void;
 }
 export default function TransactionForm({ onCloseModal }: TransactionFormProps) {
-	const [description, setDescription] = useState();
-	const [amount, setAmoun] = useState();
-	const [date, setDate] = useState();
-	
+	// const [description, setDescription] = useState();
+	// const [amount, setAmoun] = useState();
+	// const [date, setDate] = useState();
+
 	return (
 		<form>
 			<InputGroup>
