@@ -1,7 +1,7 @@
-import { ArrowCircleUp, ArrowCircleDown, CurrencyCircleDollar } from '@phosphor-icons/react';
 import BalanceCard from '../../components/BalanceCard';
 import logo from '../../assets/logo.svg';
-import { BalanceContainer, Header } from './styles';
+import { BalanceContainer, Header, TransactionsContainer } from './styles';
+import TransactionsTable from '../../components/TransactionsTable';
 
 export default function Home() {
 	return (
@@ -11,34 +11,20 @@ export default function Home() {
 			</Header>
 
 			<BalanceContainer>
-				<section id="balance">
-					<h2 className="sr-only">Balance</h2>
-					<BalanceCard title="Incomes" amount={0} type="income" />
-					<BalanceCard title="Expenses" amount={0} type="expense" />
-					<BalanceCard title="Total" amount={0} type="total" />
-				</section>
+				<h2 className="sr-only">Balance</h2>
+				<BalanceCard title="Incomes" amount={0} type="income" />
+				<BalanceCard title="Expenses" amount={0} type="expense" />
+				<BalanceCard title="Total" amount={0} type="total" />
 			</BalanceContainer>
 
-			<main className="container">
-				<section id="transaction">
-					<h2 className="sr-only">Transactions</h2>
+			<TransactionsContainer>
+				<h2 className="sr-only">Transactions</h2>
 
-					<a href="#" className="button new">
-						+ New Transaction
-					</a>
-					<table id="data-table">
-						<thead>
-							<tr>
-								<th>Description</th>
-								<th>Amount</th>
-								<th>Date</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody></tbody>
-					</table>
-				</section>
-			</main>
+				<a href="#" className="button new">
+					+ New Transaction
+				</a>
+				<TransactionsTable />
+			</TransactionsContainer>
 		</>
 	);
 }

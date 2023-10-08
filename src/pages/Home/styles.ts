@@ -14,3 +14,5 @@ const BaseContainer = styled.div`
 export const BalanceContainer = styled(BaseContainer).attrs({ as: 'main' })`
 	margin-top: -6rem;
 `;
+
+export const TransactionsContainer = styled(BaseContainer).attrs({ as: 'aside' })``;

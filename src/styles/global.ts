@@ -15,12 +15,22 @@ body {
   background: ${(props) => props.theme.colors.background};
   font-family: "Poppins", sans-serif;
   color: ${(props) => props.theme.colors.textBase};
+  font-size: 1.4rem;
 }
 
 h2 {
   margin-bottom: 0.8rem;
   color: ${(props) => props.theme.colors.textTitle};
   font-weight: 400;
+}
+
+a {
+  color: ${(props) => props.theme.colors.main};
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.9;
 }
 
 .sr-only {
