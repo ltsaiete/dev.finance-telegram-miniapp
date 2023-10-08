@@ -7,6 +7,7 @@ WebApp.ready();
 console.log(WebApp);
 WebApp.requestContact((res) => console.log('response', res));
 WebApp.onEvent('contactRequested', (cont) => console.log(cont));
+console.log(WebApp.WebAppUser);
 // console.log(WebApp.WebAppUser);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
