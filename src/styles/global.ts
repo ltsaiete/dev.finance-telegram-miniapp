@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 html {
-  font-size: 75%;
+  font-size: 62.5%;
 }
 
 body {
@@ -22,6 +22,7 @@ h2 {
   margin-bottom: 0.8rem;
   color: ${(props) => props.theme.colors.textTitle};
   font-weight: 400;
+  font-size: 1.6rem;
 }
 
 a {

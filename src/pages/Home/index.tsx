@@ -2,8 +2,13 @@ import BalanceCard from '../../components/BalanceCard';
 import logo from '../../assets/logo.svg';
 import { BalanceContainer, Header, TransactionsContainer, Footer } from './styles';
 import TransactionsTable from '../../components/TransactionsTable';
+import Modal from '../../components/Modal';
+import { useState } from 'react';
+import TransactionForm from '../../components/TransactionForm';
 
 export default function Home() {
+	const [modalOpen, setModalOpen] = useState(false);
+
 	return (
 		<>
 			<Header>
@@ -20,7 +25,7 @@ export default function Home() {
 			<TransactionsContainer>
 				<h2 className="sr-only">Transactions</h2>
 
-				<a href="#" className="button new">
+				<a href="#" onClick={() => setModalOpen(true)}>
 					+ New Transaction
 				</a>
 				<TransactionsTable />
@@ -29,6 +34,9 @@ export default function Home() {
 			<Footer>
 				<p>dev.finance$</p>
 			</Footer>
+			<Modal open={modalOpen} onOpenChange={setModalOpen} title="New Transaction" description="Add a new transaction">
+				<TransactionForm />
+			</Modal>
 		</>
 	);
 }
