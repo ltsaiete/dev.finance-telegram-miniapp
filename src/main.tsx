@@ -4,8 +4,9 @@ import App from './App.tsx';
 import WebApp from '@twa-dev/sdk';
 
 WebApp.ready();
+console.log(WebApp);
 // WebApp.requestContact((res) => console.log(res));
-console.log(WebApp.WebAppUser);
+// console.log(WebApp.WebAppUser);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
