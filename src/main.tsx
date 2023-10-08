@@ -7,6 +7,7 @@ WebApp.ready();
 console.log(WebApp);
 WebApp.requestContact((res) => console.log('response', res));
 WebApp.onEvent('contactRequested', (cont) => console.log(cont));
+// @ts-ignore
 console.log(window.Telegram.WebApp);
 // console.log(WebApp.WebAppUser);
 
