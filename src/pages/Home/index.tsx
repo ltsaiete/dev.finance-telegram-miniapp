@@ -34,7 +34,7 @@ export default function Home() {
 			<Footer>
 				<p>dev.finance$</p>
 			</Footer>
-			<Modal open={modalOpen} onOpenChange={setModalOpen} title="New Transaction" description="Add a new transaction">
+			<Modal open={modalOpen} onOpenChange={setModalOpen} title="New Transaction">
 				<TransactionForm />
 			</Modal>
 		</>

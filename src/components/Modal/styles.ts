@@ -30,7 +30,7 @@ export const DialogOverlay = styled(Dialog.Overlay)`
 `;
 
 export const DialogContent = styled(Dialog.Content)`
-	background-color: ${(props) => props.theme.colors.boxFill};
+	background-color: ${(props) => props.theme.colors.background};
 	border-radius: 0.4rem;
 	box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
 	position: fixed;
@@ -68,9 +68,7 @@ export const IconButton = styled.button`
 	}
 `;
 
-// .DialogDescription {
-//   margin: 10px 0 20px;
-//   color: var(--mauve-11);
-//   font-size: 15px;
-//   line-height: 1.5;
-// }
+export const DialogTitle = styled(Dialog.Title)`
+	font-weight: 500;
+	margin-bottom: 1.6rem;
+`;
