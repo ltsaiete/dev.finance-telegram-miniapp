@@ -5,7 +5,7 @@ import WebApp from '@twa-dev/sdk';
 
 WebApp.ready();
 console.log(WebApp);
-WebApp.requestContact((res) => console.log(res));
+WebApp.requestContact((res) => console.log('response', res));
 // console.log(WebApp.WebAppUser);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
