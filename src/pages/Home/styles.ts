@@ -16,3 +16,9 @@ export const BalanceContainer = styled(BaseContainer).attrs({ as: 'main' })`
 `;
 
 export const TransactionsContainer = styled(BaseContainer).attrs({ as: 'aside' })``;
+export const Footer = styled(BaseContainer).attrs({ as: 'footer' })`
+	text-align: center;
+	padding: 4rem 2rem;
+	color: ${(props) => props.theme.colors.textTitle};
+	opacity: 0.6;
+`;

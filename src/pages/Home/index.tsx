@@ -1,6 +1,6 @@
 import BalanceCard from '../../components/BalanceCard';
 import logo from '../../assets/logo.svg';
-import { BalanceContainer, Header, TransactionsContainer } from './styles';
+import { BalanceContainer, Header, TransactionsContainer, Footer } from './styles';
 import TransactionsTable from '../../components/TransactionsTable';
 
 export default function Home() {
@@ -25,6 +25,10 @@ export default function Home() {
 				</a>
 				<TransactionsTable />
 			</TransactionsContainer>
+
+			<Footer>
+				<p>dev.finance$</p>
+			</Footer>
 		</>
 	);
 }

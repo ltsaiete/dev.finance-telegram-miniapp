@@ -1,4 +1,6 @@
+import { MinusCircle } from '@phosphor-icons/react';
 import { Container } from './styles';
+import { theme } from '../../styles/theme';
 
 export default function TransactionsTable() {
 	return (
@@ -16,7 +18,9 @@ export default function TransactionsTable() {
 					<td>Desenvolvimento</td>
 					<td>500$</td>
 					<td>10/10/2023</td>
-					<td></td>
+					<td>
+						<MinusCircle size={32} color={theme.colors.red} />
+					</td>
 				</tr>
 			</tbody>
 		</Container>

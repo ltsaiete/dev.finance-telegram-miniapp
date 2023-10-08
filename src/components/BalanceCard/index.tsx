@@ -1,4 +1,3 @@
-import { Icon } from '@phosphor-icons/react';
 import { ArrowCircleUp, ArrowCircleDown, CurrencyCircleDollar } from '@phosphor-icons/react';
 import { theme } from '../../styles/theme';
 import { Container } from './styles';
