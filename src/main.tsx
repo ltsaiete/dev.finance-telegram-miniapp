@@ -4,7 +4,6 @@ import App from './App.tsx';
 import WebApp from '@twa-dev/sdk';
 
 WebApp.ready();
-console.log(WebApp.initData);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>

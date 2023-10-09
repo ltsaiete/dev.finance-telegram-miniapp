@@ -2,6 +2,12 @@ import { MinusCircle } from '@phosphor-icons/react';
 import { Container } from './styles';
 import { theme } from '../../styles/theme';
 
+export interface TransactionProps {
+	description: string;
+	amount: number;
+	date: Date;
+}
+
 export default function TransactionsTable() {
 	return (
 		<Container>

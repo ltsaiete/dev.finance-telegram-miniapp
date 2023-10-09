@@ -4,7 +4,6 @@ export const Header = styled.header<{ status: unknown | null }>`
 	background: ${(props) => props.theme.colors.mainDark};
 	padding: 2rem 0 8rem;
 	text-align: center;
-	position: relative;
 	div {
 		height: 2.4rem;
 		width: 2.4rem;
