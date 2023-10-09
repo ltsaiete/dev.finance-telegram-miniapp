@@ -1,9 +1,19 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const Header = styled.header<{ status: unknown | null }>`
 	background: ${(props) => props.theme.colors.mainDark};
 	padding: 2rem 0 8rem;
 	text-align: center;
+	position: relative;
+	div {
+		height: 2.4rem;
+		width: 2.4rem;
+		background: ${(props) => (props.status ? props.theme.colors.green : props.theme.colors.red)};
+		border-radius: 50%;
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
 `;
 
 const BaseContainer = styled.div`

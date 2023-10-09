@@ -5,9 +5,12 @@ import TransactionsTable from '../../components/TransactionsTable';
 import Modal from '../../components/Modal';
 import { useState } from 'react';
 import TransactionForm from '../../components/TransactionForm';
+import useFetch from '../../hooks/useFetch';
 
 export default function Home() {
 	const [modalOpen, setModalOpen] = useState(false);
+
+	const { data: status } = useFetch('/status');
 
 	function onCloseModal() {
 		setModalOpen(false);
@@ -15,8 +18,9 @@ export default function Home() {
 
 	return (
 		<>
-			<Header>
+			<Header status={status}>
 				<img src={logo} alt="logo dev.finance$" />
+				<div></div>
 			</Header>
 
 			<BalanceContainer>
