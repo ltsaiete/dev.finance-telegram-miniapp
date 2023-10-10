@@ -5,6 +5,7 @@ import { theme } from './styles/theme';
 import WebApp from '@twa-dev/sdk';
 import { useEffect, useState } from 'react';
 import { postItem, setAuthHeader } from './services/api';
+import useFetch from './hooks/useFetch';
 
 interface SessionProps {
 	token: string;
@@ -12,9 +13,8 @@ interface SessionProps {
 
 function App() {
 	const [userLoaded, setUserLoaded] = useState(false);
-	// const initData = WebApp.initData;
-	const initData =
-		'query_id=AAG2pTEvAAAAALalMS8u4OpW&user=%7B%22id%22%3A791782838%2C%22first_name%22%3A%22Lewis%22%2C%22last_name%22%3A%22Senpai%22%2C%22username%22%3A%22The_bugger%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1696875917&hash=9611eef722612f26edb3c222b2e675294eb0136fbfef06024ce38c554291df2a';
+	const initData = WebApp.initData;
+	const { data: status } = useFetch('/status');
 
 	useEffect(() => {
 		handleLoadToken();
@@ -25,13 +25,41 @@ function App() {
 		if (response) {
 			setAuthHeader(response.token);
 			setUserLoaded(true);
+		} else {
+			setTimeout(handleLoadToken, 3000);
 		}
 	}
 
 	return (
 		<>
 			<ThemeProvider theme={theme}>
-				{userLoaded ? <Home /> : <p>Loading user data...</p>}
+				{userLoaded ? (
+					<Home />
+				) : (
+					<>
+						<p
+							style={{
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								height: '8rem'
+							}}
+						>
+							Loading user data...
+						</p>
+						<div
+							style={{
+								height: '0.8rem',
+								width: '0.8rem',
+								background: status ? 'green' : 'red',
+								borderRadius: '50%',
+								position: 'absolute',
+								top: '1px',
+								right: '1px'
+							}}
+						></div>
+					</>
+				)}
 				<GlobalStyle />
 			</ThemeProvider>
 		</>
