@@ -1,11 +1,11 @@
-import { ThemeProvider } from 'styled-components';
-import Home from './pages/Home';
-import { GlobalStyle } from './styles/global';
-import { theme } from './styles/theme';
-import WebApp from '@twa-dev/sdk';
 import { useEffect, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import WebApp from '@twa-dev/sdk';
 import { postItem, setAuthHeader } from './services/api';
-import useFetch from './hooks/useFetch';
+import Home from './pages/Home';
+import ApiStatus from './components/ApiStatus';
+import { theme } from './styles/theme';
+import { GlobalStyle } from './styles/global';
 
 interface SessionProps {
 	token: string;
@@ -15,7 +15,7 @@ interface SessionProps {
 function App() {
 	const [userLoaded, setUserLoaded] = useState(false);
 	const initData = WebApp.initData;
-	const { data: status } = useFetch('/status');
+	console.log(initData);
 
 	useEffect(() => {
 		handleLoadToken();
@@ -25,6 +25,7 @@ function App() {
 		const response = await postItem<SessionProps>('/sessions', { initData });
 		if (response.error) {
 			setTimeout(handleLoadToken, 3000);
+			return;
 		} else {
 			setAuthHeader(response.token);
 			setUserLoaded(true);
@@ -39,27 +40,8 @@ function App() {
 					<Home />
 				) : (
 					<>
-						<p
-							style={{
-								display: 'flex',
-								alignItems: 'center',
-								justifyContent: 'center',
-								height: '8rem'
-							}}
-						>
-							Loading user data...
-						</p>
-						<div
-							style={{
-								height: '0.8rem',
-								width: '0.8rem',
-								background: status ? 'green' : 'red',
-								borderRadius: '50%',
-								position: 'absolute',
-								top: '1px',
-								right: '1px'
-							}}
-						></div>
+						<p style={{ textAlign: 'center', paddingTop: '6rem', height: '8rem' }}>Loading user data...</p>
+						<ApiStatus />
 					</>
 				)}
 				<GlobalStyle />

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div<{ total?: boolean }>`
-	background: ${(props) => (props.total ? props.theme.colors.main : props.theme.colors.boxFill)};
+export const Container = styled.div<{ $total?: boolean }>`
+	background: ${(props) => (props.$total ? props.theme.colors.main : props.theme.colors.boxFill)};
 	padding: 1.5rem 2rem;
 	border-radius: 0.25rem;
-	color: ${(props) => (props.total ? props.theme.colors.white : props.theme.colors.textTitle)};
+	color: ${(props) => (props.$total ? props.theme.colors.white : props.theme.colors.textTitle)};
 	margin-bottom: 2rem;
 
 	h3 {

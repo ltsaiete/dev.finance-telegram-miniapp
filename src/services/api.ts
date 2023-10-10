@@ -15,4 +15,13 @@ export function postItem<T = any>(url: string, data: any): Promise<T> {
 	return response;
 }
 
+export function deleteItem(url: string): Promise<void | { error: string }> {
+	const response = api
+		.delete(url)
+		.then((response) => response.data)
+		.catch((e) => e.response.data);
+
+	return response;
+}
+
 export default api;

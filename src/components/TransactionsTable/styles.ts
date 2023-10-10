@@ -52,6 +52,6 @@ export const Container = styled.table`
 	}
 `;
 
-export const CurrencyColumn = styled.td<{ expense: boolean }>`
-	color: ${(props) => (props.expense ? props.theme.colors.red : props.theme.colors.green)};
+export const CurrencyColumn = styled.td<{ $expense: boolean }>`
+	color: ${(props) => (props.$expense ? props.theme.colors.red : props.theme.colors.green)};
 `;
