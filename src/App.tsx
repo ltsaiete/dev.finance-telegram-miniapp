@@ -9,6 +9,7 @@ import useFetch from './hooks/useFetch';
 
 interface SessionProps {
 	token: string;
+	error: string;
 }
 
 function App() {
@@ -22,11 +23,12 @@ function App() {
 
 	async function handleLoadToken() {
 		const response = await postItem<SessionProps>('/sessions', { initData });
-		if (response) {
+		if (response.error) {
+			setTimeout(handleLoadToken, 3000);
+		} else {
 			setAuthHeader(response.token);
 			setUserLoaded(true);
-		} else {
-			setTimeout(handleLoadToken, 3000);
+			WebApp.ready();
 		}
 	}
 

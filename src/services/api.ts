@@ -6,11 +6,11 @@ export function setAuthHeader(token: string) {
 	api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 }
 
-export function postItem<T = unknown>(url: string, data: any): Promise<T | null> {
+export function postItem<T = any>(url: string, data: any): Promise<T> {
 	const response = api
 		.post(url, data)
 		.then((response) => response.data)
-		.catch(() => null);
+		.catch((e) => e.response.data);
 
 	return response;
 }
