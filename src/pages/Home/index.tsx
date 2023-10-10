@@ -1,7 +1,7 @@
 import BalanceCard from '../../components/BalanceCard';
 import logo from '../../assets/logo.svg';
 import { BalanceContainer, Header, TransactionsContainer, Footer } from './styles';
-import TransactionsTable, { TransactionProps } from '../../components/TransactionsTable';
+import TransactionsTable from '../../components/TransactionsTable';
 import Modal from '../../components/Modal';
 import { useState } from 'react';
 import TransactionForm from '../../components/TransactionForm';
@@ -11,8 +11,6 @@ export default function Home() {
 	const [modalOpen, setModalOpen] = useState(false);
 
 	const { data: status } = useFetch('/status');
-	const { data: transactions } = useFetch<TransactionProps[]>('/transactions');
-	console.log(transactions);
 
 	function onCloseModal() {
 		setModalOpen(false);

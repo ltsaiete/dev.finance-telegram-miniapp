@@ -41,21 +41,17 @@ export const Container = styled.table`
 	td {
 		background: ${(props) => props.theme.colors.boxFill};
 		padding: 1rem 2rem;
-	}
 
-	td.description {
-		color: ${(props) => props.theme.colors.textTitle};
-	}
+		&.description {
+			color: ${(props) => props.theme.colors.textTitle};
+		}
 
-	td.expense {
-		color: ${(props) => props.theme.colors.red};
+		&.remove {
+			cursor: pointer;
+		}
 	}
+`;
 
-	td.income {
-		color: ${(props) => props.theme.colors.green};
-	}
-
-	td.remove img {
-		cursor: pointer;
-	}
+export const CurrencyColumn = styled.td<{ expense: boolean }>`
+	color: ${(props) => (props.expense ? props.theme.colors.red : props.theme.colors.green)};
 `;
