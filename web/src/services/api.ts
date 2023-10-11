@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'http://localhost:3333' });
+const api = axios.create({ baseURL: 'https://dev-finance-telegram-miniapp.onrender.com' });
 
 export function setAuthHeader(token: string) {
 	api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
